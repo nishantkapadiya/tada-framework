@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up PHP
-        uses: nishantkapadiya/setup-php@v2
+        uses: shivammathur/setup-php@v2  # FIXED: Correct PHP action
         with:
           php-version: '8.0'
 
@@ -35,9 +35,12 @@ jobs:
           EOF
 
       - name: Commit and push update.json
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
           git add update.json
           git commit -m "Auto-update update.json [skip ci]" || echo "No changes to commit"
-          git push
+          git push origin main
