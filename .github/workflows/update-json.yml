@@ -1,0 +1,43 @@
+name: Generate update.json for WP Theme
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Extract version from style.css
+        id: get_version
+        run: |
+          VERSION=$(grep -E '^Version:\s' style.css | awk '{print $2}')
+          echo "Theme version: $VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create update.json
+        run: |
+          cat <<EOF > update.json
+          {
+            "version": "${{ steps.get_version.outputs.version }}",
+            "details_url": "https://github.com/${{ github.repository }}",
+            "download_url": "https://github.com/${{ github.repository }}/archive/refs/heads/main.zip"
+          }
+          EOF
+
+      - name: Commit and push update.json
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add update.json
+          git commit -m "Auto-update update.json [skip ci]" || echo "No changes to commit"
+          git push
