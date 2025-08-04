@@ -32,3 +32,8 @@ GNU General Public License for more details.
 
 Tada Framework is based on Twenty Twenty-Five (https://wordpress.org/themes/twentytwentyfive/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
+
+== Description ==
+
+This is a theme for Tada Framework.
+

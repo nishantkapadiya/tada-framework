@@ -9,13 +9,6 @@
  * @since Tada Framework 1.0
  */
 
-/**
- * Define theme constants.
- */
-define( 'TADAFRAMEWORK_VERSION', '1.0' );
-define( 'TADAFRAMEWORK_THEME_DIR', get_template_directory() );
-define( 'TADAFRAMEWORK_THEME_URI', get_template_directory_uri() );
-
 // Enqueues editor-style.css in the editors.
 if ( ! function_exists( 'tada_framework_editor_style' ) ) :
 	/**
@@ -41,11 +34,29 @@ if ( ! function_exists( 'tada_framework_enqueue_styles' ) ) :
 	 * @return void
 	 */
 	function tada_framework_enqueue_styles() {
+		// Main theme stylesheet
 		wp_enqueue_style(
 			'tada-framework-style',
 			get_parent_theme_file_uri( 'style.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
+		);
+
+		// Custom CSS from assets/css/style.css
+		wp_enqueue_style(
+			'tada-custom-style',
+			get_parent_theme_file_uri( 'assets/css/style.css' ),
+			array(),
+			wp_get_theme()->get( 'Version' )
+		);
+
+		// Custom JS from assets/js/main.js
+		wp_enqueue_script(
+			'tada-custom-script',
+			get_parent_theme_file_uri( 'assets/js/main.js' ),
+			array( 'jquery' ), // Optional dependency
+			wp_get_theme()->get( 'Version' ),
+			true // Load in footer
 		);
 	}
 endif;
@@ -111,4 +122,4 @@ endif;
 add_action( 'init', 'tada_framework_pattern_categories' );
 
 // Include necessary files.
-require_once TADAFRAMEWORK_THEME_DIR . '/inc/TGM/tgm.php';
+require_once get_template_directory() . '/inc/TGM/tgm.php';
