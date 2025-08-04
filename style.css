@@ -3,7 +3,7 @@ Theme Name: Tada Framework
 Theme URI:
 Author: Courageous
 Author URI:
-Description:
+Description: This is a theme for Tada Framework.
 Requires at least: 6.8
 Tested up to: 6.8
 Requires PHP: 7.2
@@ -52,7 +52,16 @@ a {
  * Progressive enhancement to reduce widows and orphans
  * https://github.com/WordPress/gutenberg/issues/55190
  */
-h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+caption,
+figcaption,
+p {
 	text-wrap: pretty;
 }
 
@@ -62,4 +71,141 @@ h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
 */
 .more-link {
 	display: block;
+}
+
+/* Button */
+.wp-block-button__link {
+	transition: all 0.3s ease-in-out;
+}
+
+.wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--accent-1) !important;
+	color: var(--wp--preset--color--accent-2) !important;
+	border-color: var(--wp--preset--color--accent-1) !important;
+	transition: all 0.3s ease-in-out;
+}
+
+.is-style-outline .wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--accent-2) !important;
+	color: var(--wp--preset--color--base) !important;
+	border-color: var(--wp--preset--color--accent-2) !important;
+}
+
+/* Header */
+.header-main {
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	width: 100%;
+	height: auto;
+}
+
+.business-header-rating figure {
+	display: flex;
+	align-items: center;
+}
+
+
+
+/* Footer */
+footer a {
+	transition: 0.5s;
+	text-decoration: none !important;
+}
+
+footer a:hover {
+	text-decoration: underline !important;
+}
+
+footer .wp-block-navigation-item__content:hover {
+	color: #dba38e !important;
+	text-decoration: none !important;
+}
+/*Hero – With Call to Actions*/
+.home-hero {
+	height: 100vh;
+}
+.home-hero .inner-wrap {
+	height: 100vh;
+	    display: flex
+;
+    align-items: center;
+}
+/* Split – Contained (Small Img Left) */
+.split-column {
+	justify-content: space-between !important;
+}
+
+
+:where(.wp-site-blocks)>* {
+	margin-block-start: 0 !important;
+}
+
+/*Carousel – Logos*/
+.logo-slider .wpls-logo-cnt .wpls-fix-box img {
+	filter: grayscale(1) !important;
+	opacity: 0.5;
+}
+
+@media(max-width:1199px) {
+	.business-coach .business-header-rating {
+		display: none !important;
+	}
+
+	.business-coach ul.wp-block-navigation__container {
+		gap: 15px;
+	}
+}
+
+@media(max-width:991px) {
+	.business-coach ul.wp-block-navigation__container {
+		gap: 10px;
+	}
+
+	.business-coach .business-coach-nav {
+		gap: 15px;
+	}
+}
+
+@media(max-width:767px) {
+	.business-coach .business-coach-nav {
+		gap: 10px;
+	}
+
+	.row-wrap {
+		display: block !important;
+	}
+
+	.row-wrap .left-column {
+		margin-bottom: 20px;
+	}
+
+	.row-wrap .right-column {
+		justify-content: space-between;
+	}
+
+	.footer-copyright {
+		text-align: center;
+		flex-direction: column;
+		gap: 15px;
+	}
+}
+
+@media(max-width:567px) {
+	.row-wrap .left-column {
+		justify-content: center;
+	}
+
+	.row-wrap .left-column .wp-block-navigation__container {
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.row-wrap .right-column {
+		justify-content: center;
+	}
+
+	.wp-block-spacer {
+		height: 10px !important;
+	}
 }

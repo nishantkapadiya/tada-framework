@@ -1,0 +1,235 @@
+{
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"title": "Electrician",
+	"slug": "electrician",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"name": "Dark Blue",
+					"slug": "dark-blue",
+					"color": "#f8f1e7"
+				},
+				{
+					"name": "Peach",
+					"slug": "peach",
+					"color": "#333938"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#FFFFFF"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "Schibsted Grotesk",
+					"slug": "schibsted-grotesk",
+					"fontFamily": "Schibsted Grotesk, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-Regular.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-Medium.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-MediumItalic.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-SemiBold.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-SemiBoldItalic.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-Bold.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-BoldItalic.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-ExtraBold.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-ExtraBoldItalic.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-Black.woff2"
+							]
+						},
+						{
+							"fontFamily": "Schibsted Grotesk",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/schibsted-grotesk/SchibstedGrotesk-BlackItalic.woff2"
+							]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "14px",
+					"slug": "14px",
+					"size": "14px"
+				},
+				{
+					"name": "18px",
+					"slug": "18px",
+					"size": "18px"
+				},
+				{
+					"name": "25px",
+					"slug": "25px",
+					"size": "25px"
+				},
+				{
+					"name": "30px",
+					"slug": "30px",
+					"size": "30px"
+				},
+				{
+					"name": "35px",
+					"slug": "35px",
+					"size": "35px"
+				}
+			]
+		}
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var:preset|font-family|schibsted-grotesk",
+			"fontSize": "var:preset|font-size|18px",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|schibsted-grotesk",
+					"fontSize": "var:preset|font-size|65px",
+					"fontWeight": "700",
+					"lineHeight": "1.2"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|schibsted-grotesk",
+					"fontSize": "var:preset|font-size|40px",
+					"fontWeight": "500",
+					"lineHeight": "50px"
+				}
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": "10px",
+					"width": "1px",
+					"color": "var:preset|color|peach",
+					"style": "solid"
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|schibsted-grotesk",
+					"fontWeight": "500",
+					"fontSize": "18px",
+					"textAlign": "center"
+				},
+				"spacing": {
+					"padding": {
+						"top": "10px",
+						"bottom": "10px",
+						"left": "20px",
+						"right": "20px"
+					}
+				},
+				"color": {
+					"background": "var:preset|color|peach",
+					"text": "var:preset|color|dark-blue"
+				},
+				"variations": {
+					"outline": {
+						"border": {
+							"color": "var:preset|color|peach",
+							"radius": "10px",
+							"width": "1px",
+							"style": "solid"
+						},
+						"color": {
+							"background": "transparent",
+							"text": "var:preset|color|white"
+						},
+						"shadow": "none",
+						"spacing": {
+							"padding": {
+								"top": "10px",
+								"bottom": "10px",
+								"left": "20px",
+								"right": "20px"
+							}
+						},
+						"typography": {
+							"fontFamily": "var:preset|font-family|schibsted-grotesk",
+							"fontWeight": "500",
+							"fontSize": "var:preset|font-size|18px",
+							"textAlign": "center"
+						}
+					}
+				}
+			}
+		}
+	}
+}
